@@ -1,7 +1,8 @@
 <?php
 $host = "localhost";
-$dbname = "sunsonsolarDB";
-$employee = "root"
+$dbname = "sunsonsolardb";
+$username = "root";
+$password = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fname  = trim($_POST["fname"] ?? "");
@@ -20,22 +21,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          || empty($email)|| empty($pnum)|| empty($address)|| empty($Uname)|| empty($pass)) {
         die("Name and Email are required.");
     }
-
-
+     
     try {
-       
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $conn = new PDO(
+            "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+          $username,
+          $password
+          );
+
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       
-        $stmt = $conn->prepare("$sql="INSERT INTO employee (fname, Lname, Mname, Bdate, Gender, Email, PhoneNum, Address, Username, Password));
+        $sql = "INSERT INTO employees (`First Name`, `Last Name`, `Middle Name`, `Birthdate`, `Gender`, `Email`, `Phone Num.`, `Address`, `Username`, `Password`)
+                VALUES (:fname, :lname, :Mname, :Bdate, :gender, :email, :pnum, :address, :Uname, :pass)";
+
+                $stmt = $conn->prepare($sql);
 
        
         $stmt->bindParam(":fname", $fname);
         $stmt->bindParam(":lname", $lname);
-         $stmt->bindParam(":Mname", $Mname);
+        $stmt->bindParam(":Mname", $Mname);
         $stmt->bindParam(":Bdate", $Bdate);
-         $stmt->bindParam(":gender", $gender);
+        $stmt->bindParam(":gender", $gender);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":pnum", $pnum);
         $stmt->bindParam(":address", $address);
@@ -49,14 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         echo "Database error: " . $e->getMessage();
     }
-} else {
-    echo "Invalid request.";
-}
+} 
 ?>
-?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,48 +67,52 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Registration</title>
 </head>
 <body>
-    <form action="SunSonSolar_registration.php" method="POST"></form>
+    <form action="SunSonSolar_registration.php" method="POST">
     <div class="container">
+        </div>
+    
        <h1>Create an account</h1>   
        <label>First Name</label> <br>
-       <input type="text" id="fname" required> <br><br>
+       <input type="text" id="fname" name="fname" required> <br><br>
 
        <label>Last Name</label> <br>
-       <input type="text" id="lname" required> <br><br>
+       <input type="text" id="lname" name="lname" required> <br><br>
 
        <label>Middle Name</label> <br>
-       <input type="text" id="Mname" required> <br><br>
+       <input type="text" id="Mname" name="Mname" required> <br><br>
        
        <label>Birthdate</label> <br>
-       <input type="date" id="Bdate" required> <br><br>
+       <input type="date" id="Bdate" name="Bdate" required> <br><br>
 
        <label for="Gender" required>Select Gender:</label> <br>
-       <select name="Gender" id="gender"> <br><br>
+       <select name="gender" id="gender" required> <br><br>
         <option value="male">Male</option>
         <option value="female">Female</option>
        </select>
        <br><br>
        <label>Email</label> <br>
-       <input type="email" id="email" required> <br><br>
+       <input type="email" id="email" name="email" required> <br><br>
 
        <label>Phone Number</label> <br>
-       <input type="number" id="Pnum" required> <br><br>
+       <input type="number" id="pnum" name="pnum" required> <br><br>
 
        <label>Address</label> <br>
-       <input type="text" id="address" required> <br><br>
+       <input type="text" id="address" name="address" required> <br><br>
 
        <label>Username</label> <br>
-       <input type="text" id="Uname" required> <br><br>
+       <input type="text" id="Uname" name="Uname" required> <br><br>
 
        <label>Password</label> <br>
-       <input type="password" id="pass"required> <br><br>
+       <input type="password" id="pass" name="pass" required> <br><br>
        <input type="submit" value="Register" id="regis"><br><br>
 
        <input type="checkbox" id="coding" name="interest" value="coding" required>
        <label>I agree to the terms of service and privacy policy</label>
        <br><br>
        <a message="you success created an account"></a>
-      
+
+    </form>  
+
        <a>already have an account?</a><a href="login.php">Login</a>
     </div>
 </body>
