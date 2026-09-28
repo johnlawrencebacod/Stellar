@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+    body{
+        background-color: black;
+        font-family: Sans-Serif;
+        
+    }
+    input{
+        background-color: grey;
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    div{
+        border:2px solid;
+        padding: 30px
+        height: 150px;
+        width: 250px;
+        background-color: maroon ;
+        border-radius: 10px;
+        
+    }
+    h1{
+        text-decoration-color: white;
+        font-size: 24px;
+    }
+    p{
+        font-size: 15px;
+    }
+      .container{
+        border-radius: 30px;
+        justify-content: center;
+        text-align: center;
+        place-content: center;
+        place-items: center;
+        place-self: center;
+      }
+
+      #submit{
+        size-adjust: 50px;
+        background-color: maroon ;
+        text-decoration-color: green;
+        padding: 10px;
+        border-radius: 20px;
+        height: 40px;
+        width: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>LOG IN</h1>
+     <p>Username: <input type="text" name="uname" id="uname" required><br><br></p>
+     <p>Password: <input type="password" name="pass" id="pass" required><br></p>
+      <button onclick="login()" id="submit">Submit</button><br><br>
+    </div>
+  </body>
+
+  <script>
+    const validuname = "uname1";
+    const validpass = "pass2";
+    const inname = document.getElementById("uname");
+    const inpass = document.getElementById("pass");
+    const submit = document.getElementById("submit");
+
+    function login(){
+      if (inname.value == validuname && inpass.value == validpass) {
+        alert("you successfully log in");
+      } else {
+        alert("failed to login");
+      }
+    }
+  </script>
+
+</html>
