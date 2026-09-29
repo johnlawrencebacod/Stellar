@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style (1).css">
+</head>
+<body>
+    <form action="SunSonSolar_registration.php" method="POST">
+
+    <header class="site-header">
+    <span class="wed-name">Sun Son Solar</span>
+    <nav aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="#">Panels</a></li>
+        <li><a class="site-nav__link" href="#">Batteries</a></li>
+        <li><a class="site-nav__link" href="#">Installation</a></li>
+        <li><a class="site-nav__link" href="#" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="Quote">
+    <section class="hero">
+      <h1 class="hero-title">Power your home with the sun, uninterrupted</h1>
+      <p class="hero-lead">
+        Premium solar panels, batteries and installation, engineered to keep
+        your lights on even when the grid goes dark.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#">Check our plans</a>
+        <a class="btn" href="#">See our panels</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Create an account</h2>
+      <p class="card-subtitle">Start your solar journey today</p>
+
+       <div class="container"></div>          
+       <label>First Name</label> <br>
+       <input type="text" id="fname" name="fname" required> <br><br>
+
+       <label>Last Name</label> <br>
+       <input type="text" id="lname" name="lname" required> <br><br>
+
+       <label>Middle Name</label> <br>
+       <input type="text" id="Mname" name="Mname" required> <br><br>
+       
+       <label>Birthdate</label> <br>
+       <input type="date" id="Bdate" name="Bdate" required> <br><br>
+
+       <label for="Gender" required>Select Gender:</label> <br>
+       <select name="gender" id="gender" required> <br><br>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+       </select>
+       <br><br>
+       <label>Email</label> <br>
+       <input type="email" id="email" name="email" required> <br><br>
+
+       <label>Phone Number</label> <br>
+       <input type="number" id="pnum" name="pnum" required> <br><br>
+
+       <label>Address</label> <br>
+       <input type="text" id="address" name="address" required> <br><br>
+
+       <label>Username</label> <br>
+       <input type="text" id="Uname" name="Uname" required> <br><br>
+
+       <label>Password</label> <br>
+       <input type="password" id="pass" name="pass" required> <br><br>
+       <input type="submit" value="Register" id="regis"><br><br>
+
+       <input type="checkbox" id="coding" name="interest" value="coding" required>
+       <label>I agree to the terms of service and privacy policy</label>
+       <br><br>
+       <a message="you success created an account"></a>
+
+    </form>  
+
+       <a>already have an account?</a><a href="login.php">Login</a>
+    </div>
+</body>
+</html>
