@@ -14,7 +14,9 @@ steps:
 
 Usage:
 - all file are in category in which has their own usage.
+
 The Registration System: is the functionality in which the user can create account
+
 Log in: Lets registered users with their own credentials.
 
 
