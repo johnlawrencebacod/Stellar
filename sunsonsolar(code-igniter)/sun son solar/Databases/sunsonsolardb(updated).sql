@@ -83,10 +83,10 @@ CREATE TABLE `employees` (
   `Birthdate` varchar(50) NOT NULL,
   `Gender` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Phone Num.` int(12) NOT NULL,
+  `Phone Num.` varchar(20) NOT NULL,
   `Address` varchar(100) NOT NULL,
   `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Department` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

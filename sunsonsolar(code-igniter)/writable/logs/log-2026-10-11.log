@@ -1,0 +1,139 @@
+CRITICAL - 2026-10-11 11:19:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+ 2 SYSTEMPATH\Common.php(1268): CodeIgniter\View\View->render('home', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('home')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-11 11:20:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+ 2 SYSTEMPATH\Common.php(1268): CodeIgniter\View\View->render('home', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('home')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-11 11:40:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+ 2 SYSTEMPATH\Common.php(1268): CodeIgniter\View\View->render('home', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('home')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-10-11 11:58:40 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'sunsonsolardb' in C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sunsonsolardb', 3306, '', 0)
+#1 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Commands\Database\ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#6 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:table', Array)
+#7 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#8 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'sunsonsolardb' in C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Commands\Database\ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#5 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:table', Array)
+#6 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#7 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#8 C:\xammp2\htdocs\practices\Stellar\sunsonsolar(code-igniter)\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#9 {main}
+CRITICAL - 2026-10-11 11:58:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'sunsonsolardb'
+[Method: CLI, Route: db:table/employees]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `sunsonsolardb`')
+ 3 SYSTEMPATH\Commands\Database\ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-10-11 12:18:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phon...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (:First Name:, :Last Name:, :Middle Name:, :Birthdate:, :Gender:, :Email:, :Phone Num.:, :Address:, :Username:, :Password:, :Department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Registration.php(36): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Registration->save()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registration))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xammp2\\htdocs\\practices\\Stellar\\sunsonsolar(code-igniter)\\public\\index.php')
+CRITICAL - 2026-10-11 12:18:57 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phon...' at line 1
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (:First Name:, :Last Name:, :Middle Name:, :Birthdate:, :Gender:, :Email:, :Phone Num.:, :Address:, :Username:, :Password:, :Department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Registration.php(36): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Registration->save()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registration))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xammp2\\htdocs\\practices\\Stellar\\sunsonsolar(code-igniter)\\public\\index.php')
+CRITICAL - 2026-10-11 12:18:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phon...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (:First Name:, :Last Name:, :Middle Name:, :Birthdate:, :Gender:, :Email:, :Phone Num.:, :Address:, :Username:, :Password:, :Department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Registration.php(36): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Registration->save()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registration))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xammp2\\htdocs\\practices\\Stellar\\sunsonsolar(code-igniter)\\public\\index.php')
+CRITICAL - 2026-10-11 12:18:57 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phon...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (\'Registration\', \'Verification\', \'Test\', \'1990-01-01\', \'female\', \'ci.verify.20261011@example.invalid\', \'09123456789\', \'Local verification\', \'__ci_verify_20261011__\', \'$2y$10$Ruh7gAE4GGoRCRCB3aWBYuo9.glEeiG.UvfRuvVBHrA5M7RscJJYa\', \'QA\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `employees` (`First` `Name`, `Last` `Name`, `Middle` `Name`, `Birthdate`, `Gender`, `Email`, `Phone` `Num`., `Address`, `Username`, `Password`, `Department`) VALUES (:First Name:, :Last Name:, :Middle Name:, :Birthdate:, :Gender:, :Email:, :Phone Num.:, :Address:, :Username:, :Password:, :Department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Registration.php(36): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Registration->save()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registration))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xammp2\\htdocs\\practices\\Stellar\\sunsonsolar(code-igniter)\\public\\index.php')
