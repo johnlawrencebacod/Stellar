@@ -1,0 +1,371 @@
+/* =====================================================================
+   Sun Son Solar - shared stylesheet
+   Built on style_v2.css: same colors, animated gradient, glass cards,
+   Georgia type and pill buttons. Homepage styles are added below.
+   Sections: 1 Tokens | 2 Base | 3 Layout helpers | 4 Buttons | 5 Header
+             6 Hero | 7 Sections + cards | 8 Customer story | 9 Quote CTA
+             10 Footer | 11 Responsive | 12 Reduced motion
+   ===================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+:root{
+  /* from style_v2.css (unchanged) */
+  --ink:#3d2b12;
+  --ink-soft:#6b4a1f;
+  --peach:#f6c675;
+  --peach-edge:#e0a752;
+  --rule:rgba(61,43,18,0.15);
+  --font-display:'Georgia','Times New Roman',serif;
+  --font-ui:'Georgia','Times New Roman',serif;
+  --font-nav:'Georgia','Times New Roman',serif;
+  --radius-btn:30px;
+  --glass-a:rgba(255,255,255,0.55);
+  --glass-b:rgba(255,255,255,0.25);
+  --glass-edge:rgba(255,255,255,0.6);
+
+  /* added for the homepage */
+  --radius-card:26px;
+  --sun:#FFE470;
+  --cream:#F6E7C8;
+  --green:#1E6B3A;
+  --footer-bg:#2B1D0B;
+  --footer-text:#F2DFB8;
+  --maxw:1312px;
+  --gutter:64px;
+}
+
+/* ---------- 2. Base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:16px;}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:var(--font-ui);
+  font-size:1.125rem;
+  line-height:1.55;
+  color:var(--ink);
+  background:linear-gradient(-45deg,
+  #F68414,#F59E0B,#FCBA28,
+  #FDC933,#FED845,#FFE470);
+  background-size:400% 400%;
+  animation:bg 5s ease infinite;
+}
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 100%;}
+  100%{background-position:0% 50%;}
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--ink);}
+a:hover{color:var(--ink-soft);}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+h1,h2,h3{font-family:var(--font-display);color:var(--ink);margin:0;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:100;
+  padding:.7rem 1.1rem;background:var(--ink);color:var(--peach);font-weight:700;
+}
+.skip-link:focus{left:0;color:var(--peach);}
+
+/* ---------- 3. Layout helpers ---------- */
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+.glass{
+  background:linear-gradient(155deg,var(--glass-a),var(--glass-b));
+  border:1px solid var(--glass-edge);
+  border-radius:var(--radius-card);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  box-shadow:0 .5rem 1.25rem rgba(140,95,30,.2), inset 0 0 1.5rem rgba(255,255,255,.35);
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 1.9rem;
+  border:1px solid transparent;
+  border-radius:var(--radius-btn);
+  font-family:var(--font-display);
+  font-size:1.0625rem;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 2px 3px rgba(60,35,10,.3);
+  transition:transform .12s ease, filter .12s ease;
+}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px);}
+.btn--primary{background:var(--peach);border-color:var(--peach-edge);color:var(--ink);}
+.btn--dark{background:var(--ink);border-color:var(--ink);color:var(--peach);}
+.btn--dark:hover{color:var(--peach);}
+.btn--ghost{
+  background:transparent;border:1.5px solid var(--ink);color:var(--ink);box-shadow:none;
+}
+.btn--small{min-height:46px;padding:0 1.5rem;font-size:1rem;}
+.btn--block{width:100%;min-height:54px;font-size:1.125rem;}
+
+/* ---------- 5. Header ---------- */
+.site-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem 2rem;
+  min-height:92px;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--ink);
+  text-decoration:none;
+}
+.brand img{width:42px;height:42px;flex-shrink:0;}
+.site-nav__list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.25rem clamp(1rem,2.4vw,2.1rem);
+}
+.site-nav__link{
+  display:inline-block;
+  padding:.6rem .15rem;
+  font-family:var(--font-nav);
+  font-size:1.125rem;
+  color:var(--ink);
+  text-decoration:none;
+  transition:opacity .15s ease;
+}
+.site-nav__link:hover{opacity:.65;}
+.site-nav__link[aria-current="page"]{
+  text-decoration:underline;
+  text-underline-offset:.35em;
+}
+.header-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;}
+
+/* ---------- 6. Hero ---------- */
+.hero{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1.5rem 2.5rem;
+  padding-top:1.5rem;
+  padding-bottom:5rem;
+}
+.hero__text{flex:1 1 440px;min-width:0;}
+.hero__title{
+  max-width:11ch;
+  margin-bottom:1.4rem;
+  font-size:clamp(2.9rem,6.2vw,5rem);
+  font-weight:700;
+  line-height:1.03;
+  letter-spacing:-.02em;
+}
+.hero__lead{
+  max-width:30em;
+  margin-bottom:2rem;
+  font-size:1.375rem;
+  line-height:1.5;
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.1rem;}
+.chips{display:flex;flex-wrap:wrap;gap:.75rem;}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.55rem 1rem;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:999px;
+  background:rgba(255,255,255,.5);
+  font-size:.95rem;
+  font-weight:700;
+}
+.chip svg{width:18px;height:18px;color:var(--green);flex-shrink:0;}
+.hero__art{flex:1.1 1 440px;min-width:0;max-width:700px;margin:0 auto;}
+.hero__art img{width:100%;}
+
+/* ---------- 7. Sections + cards ---------- */
+.section{padding-top:1.5rem;padding-bottom:5.5rem;}
+.section__head{max-width:46rem;margin:0 auto 2.75rem;text-align:center;}
+.section__title{
+  margin-bottom:.9rem;
+  font-size:clamp(2rem,4vw,2.9rem);
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:-.01em;
+}
+.section__lead{font-size:1.25rem;}
+
+.card-grid{display:flex;flex-wrap:wrap;gap:1.75rem;}
+.card{
+  flex:1 1 300px;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  padding:1.75rem 1.75rem 2rem;
+}
+.card--benefit{text-align:center;align-items:center;}
+.card--benefit .card__art{width:190px;max-width:70%;margin:0 auto .5rem;}
+.card--service{flex-basis:330px;padding:1.25rem 1.5rem 1.9rem;}
+.card--service .card__art{width:100%;max-width:330px;margin:0 auto .4rem;}
+.card__title{margin-bottom:.65rem;font-size:1.75rem;font-weight:700;line-height:1.2;}
+.card__text{margin-bottom:1.1rem;}
+.card--benefit .card__text{margin-bottom:0;}
+.card__link{
+  margin-top:auto;
+  font-size:1.0625rem;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+/* ---------- 8. Customer story ---------- */
+.story{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1.75rem 2.75rem;
+  margin:0;
+  padding:2.5rem 2.75rem;
+}
+.story__avatar{flex:0 0 150px;width:150px;}
+.story__body{flex:1 1 420px;min-width:0;}
+.story__quote{
+  margin:0 0 1.25rem;
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,2.6vw,2rem);
+  line-height:1.35;
+}
+.story__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;}
+.story__author{font-weight:700;}
+.story__result{
+  display:inline-flex;
+  padding:.55rem 1.1rem;
+  border-radius:999px;
+  background:var(--ink);
+  color:#FFE9B0;
+  font-size:1rem;
+  font-weight:700;
+}
+
+/* ---------- 9. Quote banner ---------- */
+.cta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:2.25rem 3.5rem;
+  padding:3.5rem;
+  border-radius:34px;
+  background:var(--ink);
+  color:var(--cream);
+  box-shadow:0 1rem 2.5rem rgba(60,35,10,.35);
+}
+.cta__text-block{flex:1 1 380px;min-width:0;}
+.cta__title{
+  margin-bottom:1rem;
+  font-size:clamp(2.1rem,4.2vw,3.25rem);
+  line-height:1.1;
+  letter-spacing:-.01em;
+  color:var(--sun);
+}
+.cta__text{max-width:28em;margin-bottom:1.5rem;font-size:1.25rem;}
+.cta__phone{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:700;color:#FFE9B0;}
+.cta__phone svg{width:20px;height:20px;}
+.cta-form{
+  flex:1 1 380px;
+  min-width:0;
+  padding:1.9rem 1.9rem 1.6rem;
+  border-radius:24px;
+  background:#FFF8E8;
+  color:var(--ink);
+}
+.cta-form__title{margin-bottom:1.1rem;font-size:1.625rem;}
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;}
+.field label{font-size:.95rem;font-weight:700;}
+.field input{
+  width:100%;
+  min-height:50px;
+  padding:0 1rem;
+  border:1.5px solid #b8935a;
+  border-radius:12px;
+  background:#fff;
+  font-family:var(--font-ui);
+  font-size:1rem;
+  color:var(--ink);
+}
+.field input:focus{outline:3px solid var(--peach-edge);outline-offset:1px;}
+.cta-form__note{margin-top:.75rem;text-align:center;font-size:.9rem;}
+
+/* ---------- 10. Footer ---------- */
+.site-footer{background:var(--footer-bg);color:var(--footer-text);font-size:1rem;}
+.site-footer a{color:var(--footer-text);text-decoration:none;}
+.site-footer a:hover{color:#fff;text-decoration:underline;}
+.footer__grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2.5rem 3rem;
+  padding-top:3.75rem;
+  padding-bottom:2.75rem;
+}
+.footer__col{flex:1 1 200px;min-width:0;}
+.footer__col--brand{flex:1.4 1 280px;}
+.footer__brand{color:#FFE9B0;}
+.site-footer .footer__brand:hover{color:#FFE9B0;text-decoration:none;}
+.footer__blurb{max-width:30em;margin:1rem 0 1.25rem;}
+.footer__title{margin-bottom:1rem;font-size:1.125rem;color:var(--sun);}
+.footer__list{display:grid;gap:.7rem;}
+.footer__list--contact li{display:flex;align-items:flex-start;gap:.75rem;}
+.footer__list--contact svg{width:20px;height:20px;margin-top:.15rem;flex-shrink:0;color:var(--peach);}
+.socials{display:flex;gap:.6rem;}
+.socials a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:46px;height:46px;
+  border:1px solid rgba(255,240,200,.4);
+  border-radius:50%;
+  color:#FFE9B0;
+}
+.socials a:hover{background:rgba(255,255,255,.1);text-decoration:none;}
+.socials svg{width:22px;height:22px;}
+.footer__bottom{border-top:1px solid rgba(255,240,200,.18);}
+.footer__legal{padding-top:1.25rem;padding-bottom:1.5rem;font-size:.95rem;}
+
+/* icon helper for inline stroke SVGs */
+.icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ---------- 11. Responsive ---------- */
+@media (max-width:900px){
+  :root{--gutter:32px;}
+  .site-header{justify-content:center;text-align:center;}
+  .hero{padding-bottom:3.5rem;}
+  .hero__text{text-align:center;}
+  .hero__title,.hero__lead{margin-left:auto;margin-right:auto;}
+  .hero__actions,.chips{justify-content:center;}
+  .cta{padding:2.5rem;}
+  .story{padding:2rem;}
+}
+@media (max-width:620px){
+  :root{--gutter:20px;}
+  .site-nav__list{justify-content:center;}
+  .header-actions{justify-content:center;}
+  .cta{padding:1.75rem 1.25rem;}
+  .cta-form{padding:1.4rem 1.2rem;}
+  .story{padding:1.5rem 1.25rem;justify-content:center;text-align:center;}
+  .story__meta{justify-content:center;}
+  .section{padding-bottom:3.5rem;}
+}
+
+/* ---------- 12. Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  body{animation:none;}
+  .btn{transition:none;}
+}
